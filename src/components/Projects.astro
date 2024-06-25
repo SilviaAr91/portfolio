@@ -1,0 +1,117 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import NextJS from "./icons/NextJS.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+import LinkInline from "./LinkInline.astro" // Asegúrate de que el nombre es correcto
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+}
+const PROJECTS = [
+  {
+    title: "Higsa - App de gestión de cáterings y menús",
+    description:
+      "Aplicación gestión de cáterings y menús 'end to end' para cliente externo, incluyendo investigación UX, creación de prototipos e implementación full stack.",
+    link: "https://youtu.be/H5sBVx2IDf4?si=yws0BhLICbLYCFUH&t=488",
+    github: "https://github.com/SilviaAr91/Full-Stack-Projects-MySQL-Node-React-",
+    image: "/projects/higsapreview2.jpg",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+  {
+    title: "Coleccionalia - App de red social para entusiastas del coleccionismo",
+    description:
+      "Prototipo de red social para coleccionistas. Consta de diversas funciones, incluyendo registro, login, perfiles de coleccionista con desplegables para añadir ítems, barra de búsqueda, modificación y eliminación de objetos, modificación de perfiles, etc.",
+    link: "https://youtu.be/ODiKVpHmLy0?si=dZWYPFvm2SvZ-rZ-",
+    github: "https://github.com/silviaar91/NodeProjects",
+    image: "/projects/coleccionalia.png",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+]
+  const NEW_LINK = "http://github.com/Silviaar91" 
+
+  
+
+  
+
+---
+
+<div class="flex flex-col gap-y-16">
+  {PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+      <div class="w-full md:w-1/2">
+        <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+          <img alt={title} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+        </div>
+      </div>
+
+      <div class="w-full md:w-1/2 md:max-w-lg">
+        <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+          {title}
+        </h3>
+        <div class="flex flex-wrap mt-2">
+          <ul class="flex flex-row mb-2 gap-x-2">
+            {tags.map((tag) => (
+              <li>
+                <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}>
+                  <tag.icon class="size-4" />
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+        </div>
+        <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Code
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+      </div>
+    </article>
+  ))}
+  
+
+
+  {PROJECTS.length > 0 && (
+    <div class="flex justify-center items-center h-full mt-2">
+      <LinkInline href={NEW_LINK}>
+        Ver más{" "}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-5 icon icon-tabler icon-tabler-chevron-right"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M9 6l6 6l-6 6" />
+        </svg>
+      </LinkInline>
+    </div>
+  )}

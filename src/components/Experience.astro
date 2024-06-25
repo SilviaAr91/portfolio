@@ -1,0 +1,39 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "Abril-Junio 2024",
+    title: "Full Stack Web developer",
+    company: "Higsa",
+    description:
+      "Diseño de aplicación de gestión de cáterings y menús. Desarrollo 'End to End', incluyendo investigación UX, creación de prototipos e implementación full stack.",
+    link: "https://github.com/SilviaAr91/Full-Stack-Projects-MySQL-Node-React-",
+  },
+  {
+    date: "2022-2023",
+    title: "Creadora de Contenido",
+    company: "Freelance",
+    description:
+      "Divulgación en plataformas online sobre Sociología y videojuegos y organización de eventos. Copywriter asociada en Full E-sports: Revista digital de deportes electrónicos.",
+      
+  },
+  {
+    date: "2017-2022",
+    title: "Investigadora y Docente FPU",
+    company: "Universidad de Granada",
+    description:
+      "Docente en Historia de la Ciencia y Documentación Científica. Investigación Social: Análisis cualitativo y cuantitativo.",
+      
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>

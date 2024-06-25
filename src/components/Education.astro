@@ -1,0 +1,49 @@
+---
+import EducationItem from "./EducationItem.astro"
+const EDUCATION = [
+  {
+    date: "Febrero - Junio 2024",
+    title: "Full Stack Web developer bootcamp",
+    company: "Socratech",
+    description:
+      "HTML5, CSS3, Flexbox, Grid, Responsive, SASS, Bootstrap, JavaScript ES6, TypeScript, Figma, React, NodeJS, Express, MySQL, Git, VSCode, GitHub, Agile y SCRUM.",
+    
+  },
+  {
+    date: "2017-2018",
+    title: "",
+    company: "Escuela Andaluza de Salud Pública",
+    description:
+      "Diploma de especialización en Género, Salud y Servicios Sociales y Sanitarios.",
+      
+  },
+  {
+    date: "2015-2016",
+    title: "Estudios de Máster",
+    company: "Universidad de Granada",
+    description:
+      "Máster en Problemas Sociales: Dirección, gestión y evaluación de programas sociales.",
+      
+      
+  },
+  {
+    date: "2015-2016",
+    title: "Estudios de Grado",
+    company: "Universidad de Granada",
+    description:
+      "Grado en Sociología. Mención de honor al mejor expediente académico.", 
+     
+      
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EDUCATION.map((education) => (
+      <li class="">
+        <EducationItem {...education} />
+      </li>
+    ))
+  }
+</ol>
