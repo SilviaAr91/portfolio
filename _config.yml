@@ -5,11 +5,5 @@ baseurl: ""
 theme: jekyll-theme-primer
 plugins:
   - jekyll-seo-tag
-  - jekyll-paginate
-  - jekyll-gist
-  - jekyll-github-metadata
-  - jekyll-relative-links
-  - jekyll-readme-index
-  - jekyll-default-layout
-  - jekyll-titles-from-headings
+
 paginate: 5
