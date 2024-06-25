@@ -1,7 +1,7 @@
 title: "Mi Portfolio"
 description: "Un blog sobre programación"
 url: "https://silviaar91.github.io"
-baseurl: "/silviaar91.github.io"
+baseurl: ""
 theme: jekyll-theme-primer
 plugins:
   - jekyll-seo-tag
